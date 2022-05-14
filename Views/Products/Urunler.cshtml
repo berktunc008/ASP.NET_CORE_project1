@@ -1,0 +1,59 @@
+﻿@model IEnumerable<webodevberk.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="margin-left:400px;">ÜRÜNLERİMİZ</h1>
+@*<img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="~/img/Asuspc.jpg" alt="">*@
+<div class="container">
+
+    <div class="row">
+        <img class="col-sm-3 " src="~/img/monsterpc.jpg">
+        <img class="col-sm-3 " src="~/img/Asuspc.jpg">
+        <img class="col-sm-3 " src="~/img/monsterpc.jpg">
+        <img class="col-sm-3 " src="~/img/Asuspc.jpg">
+    </div>
+
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.ProductID">Ürün Özelliklerine Bak..</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

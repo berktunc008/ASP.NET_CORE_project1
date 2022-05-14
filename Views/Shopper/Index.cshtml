@@ -1,0 +1,25 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Shopper/Index"];
+
+}
+
+<h1>@Localizer["İletisim"]</h1>
+
+<div class="row">
+    <img class="col-sm-4 " src="~/img/iletisim2.jpg">
+    <img class="col-sm-4 " src="~/img/iletisim1.jpg">
+    <img class="col-sm-4 " src="~/img/iletisim2.jpg">
+</div>
+<br />
+
+<h4>@Localizer["TELEFON"]</h4>
+<br />
+<br />
+<h4>@Localizer["ADRES"]</h4>
+<br />
+<br />
+<br />
+<p style="color:brown ;float:right">@Localizer["AÇIKOLMA"]</p>
